@@ -10,7 +10,7 @@ body {
   background-color: #f0f0f0;
 }
 .main_hero {
-  background-image: url('../media/background.jpg');
+  background-color: #fff;
   background-size: cover;
 }
 a {
@@ -166,7 +166,7 @@ footer {
 }
 .main-text {
   color: rgb(12, 5, 5);
-  text-shadow: 4px 4px 12px #fff8f2;
+  text-shadow: 4px 4px 12px #03b2e3;
 }
 .navbar {
   box-shadow: none;
