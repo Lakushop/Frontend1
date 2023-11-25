@@ -165,8 +165,8 @@ footer {
   border: 0;
 }
 .main-text {
-  color: white;
-  text-shadow: 4px 4px 12px #29211b;
+  color: rgb(12, 5, 5);
+  text-shadow: 4px 4px 12px #fff8f2;
 }
 .navbar {
   box-shadow: none;
