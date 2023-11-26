@@ -174,3 +174,10 @@ footer {
 .navbar-item {
   color: #484848;
 }
+a.arts1 {
+  color: black;
+}
+
+a.arts1:hover {
+  color: red; 
+}
