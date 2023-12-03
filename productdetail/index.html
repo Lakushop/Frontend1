@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Product Detail</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-social@2/css/all.min.css" />
     <link
@@ -19,45 +20,66 @@
   </head>
 
   <body>
-    <div class="container" id="navbar-container">
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="../index.html">
-            <img src="../media/logo.jpg" width="112" height="28" />
-          </a>
-
-          <a
-            role="button"
-            class="navbar-burger"
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="navbarBasicExample"
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start"></div>
-
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <a class="navbar-item" href="index.html"> Home </a>
-              <a class="navbar-item" href="fruits.html"> Fruits </a>
-              <a class="navbar-item" href="services.html"> Services </a>
-              <a class="navbar-item" href="contact.html"> Contact us </a>
-              <div class="buttons">
-                <a class="button is-primary is-blue">
-                  <strong>LakuShop</strong>
+    <section class="hero main_hero">
+      <div class="hero-head">
+        <div class="first_nav">
+          <div class="container">
+            <nav class="navbar">
+              <div class="navbar-brand">
+                <a class="navbar-item" href="./index.html">
+                  <img src="../media/logo.jpg" alt="Logo Laku Shop" width="112" height="28" />
                 </a>
+                <a class="navbar-item is-hidden-desktop" href="tel:+302109849583">
+                  <span class="icon" style="color: #333;">
+                    <i class="fa fa-lg fa-phone-alt"></i>
+                  </span>
+                </a>
+                <a class="navbar-item is-hidden-desktop" href="mailto:reservations@bulmahotels.com">
+                  <span class="icon" style="color: #333;">
+                    <i class="fa fa-lg fa-envelope"></i>
+                  </span>
+                </a>
+                <a class="navbar-item is-hidden-desktop" href="#" target="_blank">
+                  <span class="icon">
+                    <i class="fab fa-lg fa-facebook-f"></i>
+                  </span>
+                </a>
+                <!-- Mobile Menu -->
+                <div class="navbar-burger burger" data-target="navMenuBlogHero">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
               </div>
-            </div>
+            
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="field is-grouped">
+                    <p class="control">
+                      <a class="button is-primary is-blue" href="../addproduct.html">
+                        <span class="icon">
+                          <i class="fas fa-plus"></i>
+                        </span>
+                        <span>Add Products</span>
+                      </a>
+                    </p>
+                    <p class="control">
+                      <a class="button is-danger" href="tel:+302109999999">
+                        <span class="icon">
+                          <i class="fas fa-power-off"></i>
+                        </span>
+                        <span>Log Out</span>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </nav>
           </div>
         </div>
-      </nav>
-    </div>
+      </div>
+    </section>
 
     <section class="section" id="carousel-section">
       <div class="container">
@@ -75,59 +97,7 @@
 
                 <div class="buttons is-left">
                   <button class="button is-medium is-orange button is-link is-light">
-                    BUY NOW
-                  </button>
-                  <button class="button is-medium is-black is-primary is-light">CONTACT US</button>
-                </div>
-              </div>
-              <div class="column is-half">
-                <figure class="image is is-covered">
-                  <img src="images/slide-img.png" alt="" />
-                </figure>
-              </div>
-            </div>
-          </div>
-          <div class="item-2">
-            <div class="columns">
-              <div class="column is-half">
-                <h2 class="title is-1">Welcome to Our Fruits Shop</h2>
-                <p>
-                  There are many variations of passages of Lorem Ipsum available, but the majority
-                  have suffered alteration in some form, by injected humour, or randomised words
-                  which don't look even slightly believable.
-                </p>
-                <br />
-
-                <div class="buttons is-left">
-                  <button class="button is-medium is-orange button is-link is-light">
-                    SHOP NOW
-                  </button>
-                  <button class="button is-medium is-black is-primary is-light">CONTACT US</button>
-                </div>
-              </div>
-              <div class="column is-half">
-                <figure class="image is is-covered">
-                  <img src="images/slide-img.png" alt="" />
-                </figure>
-              </div>
-            </div>
-            <!-- Slide Content -->
-          </div>
-          <div class="item-3">
-            <!-- Slide Content -->
-            <div class="columns">
-              <div class="column is-half">
-                <h2 class="title is-1">Welcome to Our Fruits Shop</h2>
-                <p>
-                  There are many variations of passages of Lorem Ipsum available, but the majority
-                  have suffered alteration in some form, by injected humour, or randomised words
-                  which don't look even slightly believable.
-                </p>
-                <br />
-
-                <div class="buttons is-left">
-                  <button class="button is-medium is-orange button is-link is-light">
-                    SHOP NOW
+                     NOW
                   </button>
                   <button class="button is-medium is-black is-primary is-light">CONTACT US</button>
                 </div>
@@ -396,69 +366,39 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="footer-main">
+    <footer class="hero">
+      <div class="hero-body">
+        <div class="container">
           <div class="columns">
-            <div class="column">
-              <h4 class="title is-4">Fruits</h4>
-              <p class="">
-                randomised words which don't look even slightly believable. If you are going to use
-                a passage of Lorem Ipsum,
-              </p>
-            </div>
-            <div class="column">
-              <h4 class="title is-4">Services</h4>
-              <p class="">
-                randomised words which don't look even slightly believable. If you are going to use
-                a passage of Lorem Ipsum,
-              </p>
-            </div>
-            <div class="column">
-              <h4 class="title is-4">List</h4>
-              <p class="">
-                randomised words which don't look even slightly believable. If you are going to use
-                a passage of Lorem Ipsum,
-              </p>
-            </div>
-
-            <div class="column">
-              <h4 class="title is-4">Follow Us</h4>
-
-              <div class="buttons">
-                <a class="button is-medium is-facebook is-inverted is-black-social">
-                  <span class="icon">
-                    <i class="fab fa-facebook fa-lg"></i>
-                  </span>
-                </a>
-                <a class="button is-medium is-instagram is-inverted is-black-social">
-                  <span class="icon">
-                    <i class="fab fa-instagram fa-lg"></i>
-                  </span>
-                </a>
-                <a class="button is-medium is-twitter is-inverted is-black-social">
-                  <span class="icon">
-                    <i class="fab fa-twitter fa-lg"></i>
-                  </span>
-                </a>
-                <a class="button is-medium is-youtube is-inverted is-black-social">
-                  <span class="icon">
-                    <i class="fab fa-youtube fa-lg"></i>
-                  </span>
-                </a>
+            <div class="column is-8">
+              <div class="content">
+                <h6 class="footer_title title is-6">Newsletter</h6>
+                <p>We love to share new offers and exclusive promotions</p>
+                <div class="newsletter">
+                  <form action="#" method="POST" class="newsletter-form">
+                    <input type="email" name="email" placeholder="Enter your email address" />
+                    <button>
+                      <i class="fa fa-paper-plane"></i>
+                    </button>
+                  </form>
+                </div>
               </div>
-              <h4 class="title is-4">Subscribe Now</h4>
-              <div class="field">
-                <input class="input" type="text" placeholder="Email" />
-              </div>
-              <div class="buttons">
-                <button class="button is-left is-medium is-orange">Subscribe</button>
+            </div>
+            <div class="column is-4">
+              <div class="content">
+                <h6 class="footer_title title is-6">ADDRESS</h6>
+                <p class="is-marginless">Universitas Logistik dan Bisnis Internasional</p>
+                <p class="is-marginless">Sariasih no. 54, Bandung 40151</p>
+                <div>
+                  <i class="fa fa-phone"></i> &nbsp; <span>Phone Number</span> &nbsp;
+                  <a href="tel:+6282318275523">+62 82318275523</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </footer>
   </body>
 </html>
 
