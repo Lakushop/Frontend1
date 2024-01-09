@@ -47,6 +47,5 @@ const signUpUser = async (userData) => {
     await signUpUser(userData);
   });
 
-  // BUAT JS
-  // Hubungkan frontend ke backend
+
   
