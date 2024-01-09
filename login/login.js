@@ -1,7 +1,7 @@
 // Fungsi untuk membuat request ke Google Cloud Function saat login
 const loginUser = async (userData) => {
     try {
-      const response = await fetch('https://your-cloud-function-url-here', {
+      const response = await fetch('https://us-central1-gismegah.cloudfunctions.net/func-login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
