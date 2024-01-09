@@ -48,4 +48,5 @@ const signUpUser = async (userData) => {
   });
 
   // BUAT JS
+  // Hubungkan frontend ke backend
   
