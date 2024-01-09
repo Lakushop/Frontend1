@@ -58,49 +58,55 @@
       </div>
     </section>
     <!-- Add Product Section -->
-    <section class="hero" id="contact-us">
+    <section class="hero" id="addproduct">
       <div class="hero-body">
         <div class="container">
           <div>
             <div class="content">
               <h4 class="title is-4">Add Product</h4>
             </div>
-            <h6 class="subtitle is-6">Deskripsi Tambah Produk</h6>
-            <div class="columns box">
-              <form class="column" action="#">
-                <div class="field">
-                  <label class="label">Name</label>
+            <div class="columns box" id="addproduct2">
+              <form class="column" action="insertdata.js" method="POST">
+                <div class="field" id="nama">
+                  <label class="label">Nama Produk</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Your Name" required="" />
+                    <input class="input" type="text" placeholder="Product Name" name="Product_name" required="" />
                   </div>
                 </div>
-                <div class="field">
-                  <label class="label">Email</label>
+                <div class="field" id="shortdesc">
+                  <label class="label">Deskripsi Pendek</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Email address" required="" />
+                    <input class="input" type="text" placeholder="Short Desc" name="Short_Desc" required="" />
                   </div>
                 </div>
-                <div class="field">
-                  <label class="label">Phone Number</label>
-                  <div class="control">
-                    <input class="input" type="text" placeholder="Phone number" required="" />
-                  </div>
-                </div>
-                <div class="field">
-                  <label class="label">Message</label>
+                <div class="field" id="desc">
+                  <label class="label">Deskripsi</label>
                   <div class="control">
                     <textarea
                       class="textarea"
                       type="text"
-                      placeholder="Type your message here..."
+                      placeholder="Put Your Desc Here"
+                      name="Desc"
+                      required=""
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label">Kategori</label>
+                  <div class="control">
+                    <textarea
+                      class="input"
+                      type="text"
+                      placeholder="Masukkan kategori disini"
+                      name="kategori"
                       required=""
                     ></textarea>
                   </div>
                 </div>
                 <div class="field">
                   <label class="label"></label>
-                  <div class="control">
-                    <input class="button is-primary" type="submit" />
+                  <div class="control" id="submitBtn">
+                    <input class="button is-primary" type="submit" value="Submit" />
                   </div>
                 </div>
               </form>
@@ -144,5 +150,6 @@
         </div>
       </div>
     </footer>
+    <script type="module" src="./js/fetchdata.js"></script>
   </body>
 </html>
