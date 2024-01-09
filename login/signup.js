@@ -46,4 +46,6 @@ const signUpUser = async (userData) => {
     // Panggil fungsi untuk sign up pengguna
     await signUpUser(userData);
   });
+
+  // BUAT JS
   
