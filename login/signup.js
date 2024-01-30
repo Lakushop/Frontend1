@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
       // Buat objek data yang akan dikirim ke Google Cloud Function
       const data = {
           email: email,
-          password: password
+          password: password,
+          role: role
       };
 
       // Kirim data ke Google Cloud Function
