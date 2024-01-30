@@ -1,51 +1,44 @@
-// Fungsi untuk membuat request ke Google Cloud Function
-const signUpUser = async (userData) => {
-    try {
-      const response = await fetch('https://asia-southeast2-gismegah.cloudfunctions.net/func-signuppengguna', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userData),
-      });
-  
-      if (!response.ok) {
-        throw new Error('Gagal membuat akun');
+document.addEventListener('DOMContentLoaded', function () {
+  const signupBtn = document.getElementById('signupBtn');
+
+  signupBtn.addEventListener('click', function (event) {
+      event.preventDefault(); // Hindari pengiriman form default
+
+      // Ambil nilai email, password, dan konfirmasi password
+      const email = document.querySelector('input[type="email"]').value;
+      const password = document.querySelectorAll('input[type="password"]')[0].value;
+      const confirmPassword = document.querySelectorAll('input[type="password"]')[1].value;
+
+      // Periksa apakah password dan konfirmasi password sama
+      if (password !== confirmPassword) {
+          alert('Konfirmasi kata sandi tidak sesuai.');
+          return;
       }
-  
-      const data = await response.json();
-      console.log('Berhasil membuat akun:', data);
-      // Lakukan tindakan setelah berhasil mendaftar di sini (misalnya, redirect atau pesan berhasil)
-    } catch (error) {
-      console.error('Gagal membuat akun:', error);
-      // Tangani kesalahan (tampilkan pesan kesalahan, kembalikan ke halaman pendaftaran, dll.)
-    }
-  };
-  
-  // Mendapatkan elemen tombol 'BUAT' dari HTML berdasarkan ID
-  const signUpButton = document.getElementById('signupBtn');
-  
-  // Menambahkan event listener untuk klik pada tombol 'BUAT'
-  signUpButton.addEventListener('click', async (event) => {
-    event.preventDefault();
-  
-    // Mengambil nilai dari input
-    const firstName = document.querySelector('.first_name input').value;
-    const lastName = document.querySelector('.last_name input').value;
-    const email = document.querySelector('.email input').value;
-    const password = document.querySelector('.password input').value;
-  
-    // Membuat objek data pengguna
-    const userData = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      password: password,
-    };
-  
-    // Panggil fungsi untuk sign up pengguna
-    await signUpUser(userData);
+
+      // Buat objek data yang akan dikirim ke Google Cloud Function
+      const data = {
+          email: email,
+          password: password
+      };
+
+      // Kirim data ke Google Cloud Function
+      fetch('https://asia-southeast2-gismegah.cloudfunctions.net/func-signuppengguna', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(result => {
+          // Handle hasil dari Google Cloud Function
+          console.log(result);
+          alert('Pendaftaran berhasil!');
+      })
+      .catch(error => {
+          // Handle kesalahan
+          console.error('Error:', error);
+          alert('Terjadi kesalahan. Silakan coba lagi.');
+      });
   });
-
-
-  
+});
