@@ -29,17 +29,17 @@ const insertData = async (data) => {
     event.preventDefault();
   
     // Mengambil nilai dari input
-    const Product_name = document.querySelector('.Product_name input').value;
-    const Short_Desc = document.querySelector('.Short_Desc input').value;
-    const Desc = document.querySelector('.Desc input').value;
-    const Kategori = document.querySelector('.Kategori input').value;
+    const product_name = document.querySelector('.product_name input').value;
+    const desc = document.querySelector('.desc input').value;
+    const kategori = document.querySelector('.kategori input').value;
+    const price = document.querySelector('.price input').value;
   
     // Membuat objek data pengguna
     const productData = {
-      Product_name: Product_name,
-      Short_Desc: Short_Desc,
-      Desc: Desc,
-      Kategori: Kategori
+      product_name: product_name,
+      desc: desc,
+      kategori: kategori,
+      price: price
     };
   
     // Panggil fungsi untuk sign up pengguna
