@@ -181,3 +181,20 @@ a.products {
 a.products:hover {
   color: #03b2e3; 
 }
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out; 
+}
+
+/* Tambahkan aturan CSS untuk efek transisi */
+.button-transition {
+  transition: background-color 1s ease-in-out;
+}
+
+/* Tambahkan aturan CSS untuk efek saat tombol dihover */
+.button-transition:hover {
+  background-color: lightblue; /* Ganti warna latar belakang saat dihover (opsional) */
+}
+
+

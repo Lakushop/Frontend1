@@ -1,45 +1,43 @@
-// Fungsi untuk membuat request ke Google Cloud Function saat login
-const loginUser = async (userData) => {
-    try {
-      const response = await fetch('https://us-central1-gismegah.cloudfunctions.net/func-login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userData),
+document.addEventListener('DOMContentLoaded', function () {
+  const loginBtn = document.querySelector('.button');
+
+  loginBtn.addEventListener('click', function (event) {
+      event.preventDefault(); // Hindari pengiriman form default
+
+      // Ambil nilai email dan password dari input
+      const email = document.querySelector('input[type="email"]').value;
+      const password = document.querySelector('input[type="password"]').value;
+
+      // Buat objek data yang akan dikirim ke Google Cloud Function
+      const data = {
+          email: email,
+          password: password
+      };
+
+      // Kirim data ke Google Cloud Function
+      fetch('https://asia-southeast2-gismegah.cloudfunctions.net/func-signuppengguna', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(result => {
+          // Handle hasil dari Google Cloud Function
+          console.log(result);
+
+          // Jika login berhasil, arahkan ke halaman index.html
+          if (result.success) {
+              window.location.href = 'index.html';
+          } else {
+              alert('Login gagal. Periksa kembali email dan kata sandi Anda.');
+          }
+      })
+      .catch(error => {
+          // Handle kesalahan
+          console.error('Error:', error);
+          alert('Terjadi kesalahan. Silakan coba lagi.');
       });
-  
-      if (!response.ok) {
-        throw new Error('Login gagal');
-      }
-  
-      const data = await response.json();
-      console.log('Berhasil login:', data);
-      // Lakukan tindakan setelah berhasil login di sini (misalnya, redirect atau tampilan pesan berhasil)
-    } catch (error) {
-      console.error('Gagal login:', error);
-      // Tangani kesalahan (tampilkan pesan kesalahan, kembali ke halaman login, dll.)
-    }
-  };
-  
-  // Mendapatkan elemen formulir dari HTML
-  const loginForm = document.querySelector('form');
-  
-  // Menangani event submit formulir
-  loginForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
-  
-    // Mengambil nilai dari input
-    const email = loginForm.querySelector('input[type="email"]').value;
-    const password = loginForm.querySelector('input[type="password"]').value;
-  
-    // Membuat objek data login
-    const userData = {
-      email: email,
-      password: password,
-    };
-  
-    // Panggil fungsi untuk login pengguna
-    await loginUser(userData);
   });
-  
+});
