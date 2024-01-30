@@ -66,38 +66,44 @@
               <h4 class="title is-4">Add Product</h4>
             </div>
             <div class="columns box" id="addproduct2">
-              <form class="column" action="insertdata.js" method="POST">
+              <form class="column" action="./js/addproduct.js" method="POST">
                 <div class="field" id="nama">
-                  <label class="label">Nama Produk</label>
+                  <label class="label">Product Name</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Product Name" name="Product_name" required="" />
-                  </div>
-                </div>
-                <div class="field" id="shortdesc">
-                  <label class="label">Deskripsi Pendek</label>
-                  <div class="control">
-                    <input class="input" type="text" placeholder="Short Desc" name="Short_Desc" required="" />
+                    <input class="input" type="text" placeholder="Product Name" name="product_name" required="" />
                   </div>
                 </div>
                 <div class="field" id="desc">
-                  <label class="label">Deskripsi</label>
+                  <label class="label">Description</label>
                   <div class="control">
                     <textarea
                       class="textarea"
                       type="text"
                       placeholder="Put Your Desc Here"
-                      name="Desc"
+                      name="desc"
                       required=""
                     ></textarea>
                   </div>
                 </div>
                 <div class="field">
-                  <label class="label">Kategori</label>
+                  <label class="label">Category</label>
                   <div class="control">
                     <textarea
                       class="input"
                       type="text"
-                      placeholder="Masukkan kategori disini"
+                      placeholder="Put Category Here"
+                      name="kategori"
+                      required=""
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label">Price</label>
+                  <div class="control">
+                    <textarea
+                      class="input"
+                      type="text"
+                      placeholder="000"
                       name="kategori"
                       required=""
                     ></textarea>

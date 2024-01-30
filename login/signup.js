@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const password = document.querySelectorAll('input[type="password"]')[0].value;
       const confirmPassword = document.querySelectorAll('input[type="password"]')[1].value;
 
+
       // Periksa apakah password dan konfirmasi password sama
       if (password !== confirmPassword) {
           alert('Konfirmasi kata sandi tidak sesuai.');
