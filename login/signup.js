@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
       };
 
       // Kirim data ke Google Cloud Function
-      fetch('https://asia-southeast2-gismegah.cloudfunctions.net/func-signuppengguna', {
+      fetch('https://us-central1-gismegah.cloudfunctions.net/func-login', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'
